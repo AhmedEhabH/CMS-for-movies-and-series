@@ -30,5 +30,7 @@ app.use('/', routes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, process.env.IP, ()=>{
+    console.log("=".repeat(35));
     console.log(`You are listen to port ${port}`);
+    console.log("=".repeat(35));
 })
