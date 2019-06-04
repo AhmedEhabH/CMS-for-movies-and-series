@@ -26,6 +26,10 @@ passport.serializeUser(user.serializeUser());
 passport.deserializeUser(user.deserializeUser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
+    next(); 
+});
 app.use('/', routes);
 
 const port = process.env.PORT || 3000;

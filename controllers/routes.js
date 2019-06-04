@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 
 const User = require('../models/user');
+const Utilities = require('./utilities');
 
 const routes = express.Router();
 
@@ -23,8 +24,13 @@ routes.post('/login', passport.authenticate('local', {
 }), (req, res) => {
 })
 
+routes.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+})
+
 routes.get('/register', (req, res) => {
-    res.render('register');
+    res.render('register', {error:"I don't now"});
 })
 
 routes.post('/register', (req, res) => {
@@ -49,7 +55,7 @@ routes.post('/register', (req, res) => {
 })
 
 routes.get('*', (req, res) => {
-    res.render('index');
+    res.render('index', {currentUser: req.user});
 })
 
 module.exports = routes;

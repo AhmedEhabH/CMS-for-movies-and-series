@@ -1,6 +1,6 @@
 <% include partials/header %>
 <% try{ %>
-    <% if(error){ %>
+    <% if(error == "user"){ %>
         <script>alert('This username was token');</script>
     <% } %>
 <% } catch(err){
