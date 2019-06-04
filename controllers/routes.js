@@ -17,6 +17,12 @@ routes.get('/login', (req, res) => {
     res.render('login');
 })
 
+routes.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect:"/login"
+}), (req, res) => {
+})
+
 routes.get('/register', (req, res) => {
     res.render('register');
 })
