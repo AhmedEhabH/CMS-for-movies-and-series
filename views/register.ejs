@@ -1,16 +1,29 @@
-<h1>Sign UP</h1>
-
+<% include partials/header %>
 <% try{ %>
     <% if(error){ %>
         <script>alert('This username was token');</script>
     <% } %>
 <% } catch(err){
+    console.log("=".repeat(50));
+    console.log("catch of username was token")
     console.log(err);
-
+    console.log("=".repeat(50));
 }%>
 
-<form action="/register" method="post">
-    <input type="text" name="username" id="username" required>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Sign UP">
-</form>
+<div class="container">
+    <h1>Sign UP</h1>
+    <div class="container">
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="Username">Username</label>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+            </div>
+            <input type="submit" value="Sign UP" class="btn btn-outline-primary">
+    </form>
+</div>
+</div>
+<% include partials/footer %>
