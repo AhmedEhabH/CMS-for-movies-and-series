@@ -9,6 +9,7 @@ const passportLocalMongoose = require('passport-local-mongoose');
 mongoose.connect('mongodb://localhost/cms', {useNewUrlParser:true,useCreateIndex:true});
 
 const routes = require('./controllers/routes')
+const indexRoutes = require('./controllers/indexRoutes');
 const user = require('./models/user');  
 
 const app = express();
@@ -30,7 +31,8 @@ app.use((req, res, next) => {
     res.locals.currentUser = req.user;
     next(); 
 });
-app.use('/', routes);
+app.use(routes);
+app.use(indexRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, process.env.IP, ()=>{
