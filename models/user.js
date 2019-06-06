@@ -5,7 +5,10 @@ const userSchema = new mongoose.Schema({
     username: {
         type:String
     },
-    password: String
+    email: String,
+    password: String,
+    type: Number //0 ==> Admin, 1 ==> Premium, 2 ==> Normal
+    
 })
 
 userSchema.plugin(passportLocalMongoose);

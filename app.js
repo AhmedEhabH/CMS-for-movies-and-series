@@ -6,7 +6,11 @@ const passport = require('passport');
 const localStrategy = require('passport-local')
 const passportLocalMongoose = require('passport-local-mongoose');
 
-mongoose.connect('mongodb://localhost/cms', {useNewUrlParser:true,useCreateIndex:true});
+mongoose.connect('mongodb://localhost/cms', {useNewUrlParser:true,useCreateIndex:true}, () => {
+    console.log("=".repeat(35));
+    console.log("Connected with database");
+    console.log("=".repeat(35));
+});
 
 const routes = require('./controllers/routes')
 const indexRoutes = require('./controllers/indexRoutes');
