@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+    <div class="container">
+        <form action="/addMovies" method="post">
+            <div class="form-group">
+                <label for="movie name">Movie name:</label>
+                <input type="text" name="movie[movieName]" id="movie[movieName]" class="form-control" placeholder="enter movie name" required>
+            </div>
+            <div class="form-group">
+                <label for="movie image">Movie image</label>
+                <input type="text" name="movie[imageSrc]" id="movie[imageSrc]" class="form-control" placeholder="enter image url" required>
+            </div>
+            <div class="form-group">
+                <label for="movie story">Movie story</label>
+                <input type="text" name="movie[story]" id="movie[story]" class="form-control" placeholder="enter movie story">
+            </div>
+            <input type="submit" value="add" class="btn btn-outline-primary">
+        </form>
+    </div>
+<% include ../partials/footer %>

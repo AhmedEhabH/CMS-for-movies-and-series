@@ -1,8 +1,15 @@
 <% include partials/header %>
 
     <div class="container">
-        <h3>Welcome <strong><i><%=currentUser.username%></i></strong></h3>
-        <h5>user type: <strong> <%if(currentUser.userType == 0) {%>Admin<%} else if(currentUser.userType == 1){%>Premium<%} else{%>Normal<%}%> </strong></h5>
+        <div class="container">
+            <h3>Welcome <strong><i><%=currentUser.username%></i></strong></h3>
+            <h5>user type: <strong> <% if(currentUser.userType == 0) {%> Admin <%} else if(currentUser.userType == 1){%> Premium <%} else if(currentUser.userType == 2){%> Normal <%} else if(currentUser.userType == 3){%> Admin Hand <% } %> </strong></h5>        
+        </div>
+        <div class="container">
+            <%if(currentUser.userType == 0 || currentUser.userType == 3) {%>
+                <a href="/addMovies" class="btn btn-outline-primary">Add Movie</a>
+            <% } %>
+        </div>    
     </div>
     
 <% include partials/footer %>
