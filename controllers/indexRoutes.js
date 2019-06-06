@@ -27,7 +27,7 @@ routes.get('/register', (req, res) => {
 routes.post('/register', (req, res) => {
     console.log(`name:req.username = ${req.body.username}`);
     console.log(`name:req.password = ${req.body.password}`);
-    var newUser = new User({username: req.body.username});
+    var newUser = new User({username: req.body.username, email: req.body.email});
     User.register(newUser, req.body.password, (err, user) => {
         if(err)
         {

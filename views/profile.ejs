@@ -1,0 +1,8 @@
+<% include partials/header %>
+
+    <div class="container">
+        <h3>Welcome <strong><i><%=currentUser.username%></i></strong></h3>
+        <h5>user type: <strong> <%if(currentUser.userType == 0) {%>Admin<%} else if(currentUser.userType == 1){%>Premium<%} else{%>Normal<%}%> </strong></h5>
+    </div>
+    
+<% include partials/footer %>
