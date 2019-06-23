@@ -21,8 +21,9 @@ routes.get('/profile/:id', Utility.isLoggedIn, (req, res) => {
 
 routes.get('/movies', (req, res) => {
     Movie.find({}, (err, foundMovies) => {
+        console.log('*=*'.repeat(10))
         console.log(foundMovies);
-        res.json(foundMovies);
+        res.render('./movie/movies', {movies:foundMovies})
     })
 })
 

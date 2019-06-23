@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+<div class="container">
+    <%for(let i = 0; i < movies.length; i++) {%>
+    <div class="card" style="width: 20rem; margin: 1%; float: left;">
+        <img class="card-img-top" src="<%=movies[i].imageSrc%>" alt="<%=movies[i].movieName%>">
+        <div class="card-body">
+            <h5 class="card-title"><%= movies[i].movieName %></h5>
+            <p class="card-text"><%= movies[i].story %></p>
+            <a href="/movies/<%=movies[i]._id%>" class="btn btn-primary"><%=movies[i].movieName%></a>
+        </div>
+    </div>
+    <%}%>
+</div>
+<% include ../partials/footer %>
