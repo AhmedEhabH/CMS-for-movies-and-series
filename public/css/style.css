@@ -1,0 +1,32 @@
+body
+{
+    background-color: #3f3f3f;
+}
+
+.content
+{
+    margin: 5px;
+    background-color: #f8f9fa;
+    border: 2px solid #d8e9fa; 
+}
+/* a b c d e f */
+#ul-nav>li>a {
+    background-color: transparent;
+    color: #0071ff;
+}
+
+#ul-nav>li>a:hover {
+    background-color: #0071ff;
+    color: #f8f9fa;
+}
+
+@media (max-width: 992.25px) {
+    #ul-nav {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        text-align: center;
+    }
+}
