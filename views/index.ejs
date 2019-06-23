@@ -1,5 +1,24 @@
 <% include partials/header %>
     <div class="container">
-        <h1>This will be <strong><i>Home</i></strong> page</h1>
+        <ul id='home-page'>
+            <li>
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+                <a href="/movies"><strong>Movies</strong></a>
+            </li>
+            <li>
+                <div class="container">
+                    <%for(let i = 0; i < movie.length; i++) {%>
+                    <div class="card" style="width: 18rem; margin: 1%; float: left;">
+                        <img src="<%=movie[i].imageSrc%>" alt="<%=movie[i].movieName%>" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= movie[i].movieName %></h5>
+                            <p class="card-text"><%= movie[i].story %></p>
+                            <a href="/movies/<%=movie[i]._id%>" class="btn btn-primary"><%=movie[i].movieName%></a>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+            </li>
+        </ul>
     </div>
 <% include partials/footer %>

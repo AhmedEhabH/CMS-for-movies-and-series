@@ -1,14 +1,27 @@
 body
 {
-    background-color: #3f3f3f;
+    background-color: #111;
+    padding: .75%;
+}
+
+#home-page
+{
+    list-style: none;
 }
 
 .content
 {
-    margin: 5px;
+    margin-top: 1%; 
     background-color: #f8f9fa;
-    border: 2px solid #d8e9fa; 
+    padding: 1%;
 }
+
+#form-container
+{
+    height:75vh;
+    padding: 5%;
+}
+
 /* a b c d e f */
 #ul-nav>li>a {
     background-color: transparent;

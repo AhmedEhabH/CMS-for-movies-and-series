@@ -2,6 +2,7 @@ const express = require('express');
 const passport = require('passport');
 
 const User = require('../models/user');
+const Movie = require('../models/movie');
 
 const routes = express.Router();
 
@@ -46,7 +47,18 @@ routes.post('/register', (req, res) => {
 })
 
 routes.get('*', (req, res) => {
-    res.render('index', {currentUser: req.user});
+    Movie.find({}, (err, foundMovies)=>{
+        if(err)
+        {
+            console.error(err);
+        }
+        else
+        {
+            // console.log(foundMovies);
+            res.render('index', {currentUser: req.user, movie:foundMovies});
+        }
+    })
+    // res.render('index', {currentUser: req.user});
 })
 
 module.exports = routes;

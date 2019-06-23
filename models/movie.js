@@ -11,6 +11,6 @@ const movieSchema = new mongoose.Schema({
     }
 })
 
-movieSchema.plugin(passportLocalMongoose);
+//movieSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('movie', movieSchema);
